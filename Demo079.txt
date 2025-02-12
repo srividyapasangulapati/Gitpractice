@@ -1,0 +1,26 @@
+import java.util.Scanner;
+public class Demo079 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int[] numbers = {10, 20, 30, 40, 50};
+        System.out.print("Enter the number to search: ");
+        int target = scanner.nextInt();
+        boolean found = searchElement(numbers, target);
+        if (found) {
+            System.out.println(target + " is found in the array.");
+        } else {
+            System.out.println(target + " is not found in the array.");
+        }
+        
+        scanner.close();
+    }
+    
+    public static boolean searchElement(int[] arr, int target) {
+        for (int num : arr) {
+            if (num == target) {
+                return true;
+            }
+        }
+        return false;
+    }
+}
