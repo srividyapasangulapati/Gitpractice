@@ -1,0 +1,30 @@
+import java.util.*;
+public class Demo078 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the number of elements: ");
+        int n = scanner.nextInt();
+        int[] arr = new int[n];
+        System.out.println("Enter the elements:");
+        for (int i = 0; i < n; i++) {
+            arr[i] = scanner.nextInt();
+        }
+        int[] result = arrangeEvenOdd(arr);  
+        System.out.println("Array after arranging even numbers on the left and odd numbers on the right:");
+        System.out.println(Arrays.toString(result));
+        scanner.close();
+    }
+    public static int[] arrangeEvenOdd(int[] arr) {
+        int left = 0, right = arr.length - 1;
+        int[] newArr = new int[arr.length];
+        
+        for (int num : arr) {
+            if (num % 2 == 0) {
+                newArr[left++] = num;
+            } else {
+                newArr[right--] = num;
+            }
+        }
+        return newArr;
+    }
+}
