@@ -1,0 +1,18 @@
+import java.util.Scanner;
+public class Demo083 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String input = scanner.nextLine();
+        if (!input.isEmpty()) {
+            char firstChar = Character.toLowerCase(input.charAt(0));
+            if ("aeiou".indexOf(firstChar) != -1) {
+                System.out.println("The first character is a vowel.");
+            } else {
+                System.out.println("The first character is a consonant.");
+            }
+        } else {
+            System.out.println("Empty string entered.");
+        }
+    }
+}
