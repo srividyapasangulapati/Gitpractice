@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+public class Demo081 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int[] numbers = {10, 20, 30, 40, 50};
+        System.out.print("Leader elements in the array: ");
+        printLeaders(numbers);
+        scanner.close();
+    }
+    
+    public static void printLeaders(int[] arr) {
+        int n = arr.length;
+        int maxFromRight = arr[n - 1];
+        System.out.print(maxFromRight + " ");
+        
+        for (int i = n - 2; i >= 0; i--) {
+            if (arr[i] > maxFromRight) {
+                maxFromRight = arr[i];
+                System.out.print(maxFromRight + " ");
+            }
+        }
+        System.out.println();
+    }
+}
